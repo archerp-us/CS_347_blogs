@@ -20,7 +20,7 @@
     An image with text on top is done by setting the text color to white with a black background. 
     There are many other variations to this tag and ways to use this property and I hope to use this property in future projects.</p>
 
-<p>Example CSS code for displaying text with an image displaying under it:
+<pre>Example CSS code for displaying text with an image displaying under it:
     .backdrop {
         width: 600px; height: 210px;
         background-image: url(someimage.jpg);
@@ -39,9 +39,11 @@
         line-height: 210px;
         margin: 0;
        }
-</p>
+</pre>
+<img src="https://assets.hongkiat.com/uploads/css3-mix-blend-mode/image-inside-text-2.jpg" alt="Image under text">
 
-<p>Example CSS code for displaying an image with text over it:
+
+<pre>Example CSS code for displaying an image with text over it:
     .text {
         color: white;
         background-color: black;
@@ -54,64 +56,14 @@
         line-height: 210px;
         margin: 0;
        }
-</p>
-
-<div class="backdrop water">
-    <p class="text water">Water</p>
-    <div class="overlay water"></div>
-</div>
-
-<div class="backdrop water">
-    <p class="text water inverse">Water</p>
-    <div class="overlay water"></div>
-</div>
-
-.backdrop {
-    width: 600px; height: 300px;
-    position: relative;
-    background-size: 100%;
-    margin: 40px auto;
-}
-.text {
-    color: black;
-    background-color: white;
-    mix-blend-mode:screen; 
-    width: 100%; height: 100%;
-    font-weight: bolder;
-    text-align: center;
-    line-height: 300px;
-    margin: 0;
-}
-.inverse {
-    color: white;
-    background-color: black;
-}
-.backdrop
-,.text {
-    border-radius: 2px;
-}
-.overlay {
-    width: 100%; height: 100%;
-    position: absolute;
-    top: 0;
-    mix-blend-mode:multiply;
-}
-
-.water.backdrop {
-    background-image: url(https://images.unsplash.com/reserve/AXx3QORhRDKAMrbb8pX4_photo%202.JPG);
-}
-.water.overlay {
-    background-color: rgba(0,255,255,.1);
-}
-.water.text {
-    font-size: 160pt;
-}
+</pre>
+<img src="https://assets.hongkiat.com/uploads/css3-mix-blend-mode/text-surrounded-by-image.jpg" alt="Text over image">
 
 <h4>Sources:</h4>
-<h2><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-blend-mode">Mozilla Developer</a></h2>
-<h2><a href="https://www.hongkiat.com/blog/css3-mix-blend-mode/#:~:text=Adding%20color&text=To%20add%20color%20to%20the,the%20image%20appearing%20inside%20text.">Hongkiat</a></h2>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-blend-mode">Mozilla Developer</a>
+<a href="https://www.hongkiat.com/blog/css3-mix-blend-mode/#:~:text=Adding%20color&text=To%20add%20color%20to%20the,the%20image%20appearing%20inside%20text.">Hongkiat</a>
 
-<h2><a href="index.html">Return to Index</a></h2>
+<h3><a href="index.html">Return to Index</a></h3>
 
 </body>
 </html>
