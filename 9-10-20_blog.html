@@ -4,11 +4,114 @@
 
 <h1>Blog for September 10, 2020</h1>
 
+<p>This week I researched the mix-blend-mode property in CSS. 
+    Mix-blend-mode is used to blend elements with the background or with other elements. 
+    Most of the uses of this property are for displaying text over a background image/video 
+    or having an image/video display through the text. 
+    I found this to be very interesting as it can give a webpage a more unique look by stacking text and images 
+    while still maintaining that each can be seen. Many modern websites make use of this property, 
+    especially travel sites to show video/images while still providing links and text about their services. 
+    An example of this is the visit Virginia Beach site, playing a video behind the text on the homepage. </p>
+
+<a href="https://www.visitvirginiabeach.com/">Visit Virginia Beach</a>
+
+<p>The mix-blend-mode CSS tag is used to achieve this effect and can be set to blend either text through an image 
+    or image through text. Setting mix-blend-mode: screen allows an image to show text. 
+    An image with text on top is done by setting the text color to white with a black background. 
+    There are many other variations to this tag and ways to use this property and I hope to use this property in future projects.</p>
+
+<p>Example CSS code for displaying text with an image displaying under it:
+    .backdrop {
+        width: 600px; height: 210px;
+        background-image: url(someimage.jpg);
+        background-size: 100%;
+        margin: auto;
+       }
+       .text {
+        color: black;
+        background-color: white;
+        mix-blend-mode: screen;
+        width: 100%;
+        height: 100%;
+        font-size: 160pt;
+        font-weight: bolder;
+        text-align: center;
+        line-height: 210px;
+        margin: 0;
+       }
+</p>
+
+<p>Example CSS code for displaying an image with text over it:
+    .text {
+        color: white;
+        background-color: black;
+        mix-blend-mode: screen;
+        width: 100%;
+        height: 100%;
+        font-size: 160pt;
+        font-weight: bolder;
+        text-align: center;
+        line-height: 210px;
+        margin: 0;
+       }
+</p>
+
+<div class="backdrop water">
+    <p class="text water">Water</p>
+    <div class="overlay water"></div>
+</div>
+
+<div class="backdrop water">
+    <p class="text water inverse">Water</p>
+    <div class="overlay water"></div>
+</div>
+
+.backdrop {
+    width: 600px; height: 300px;
+    position: relative;
+    background-size: 100%;
+    margin: 40px auto;
+}
+.text {
+    color: black;
+    background-color: white;
+    mix-blend-mode:screen; 
+    width: 100%; height: 100%;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 300px;
+    margin: 0;
+}
+.inverse {
+    color: white;
+    background-color: black;
+}
+.backdrop
+,.text {
+    border-radius: 2px;
+}
+.overlay {
+    width: 100%; height: 100%;
+    position: absolute;
+    top: 0;
+    mix-blend-mode:multiply;
+}
+
+.water.backdrop {
+    background-image: url(https://images.unsplash.com/reserve/AXx3QORhRDKAMrbb8pX4_photo%202.JPG);
+}
+.water.overlay {
+    background-color: rgba(0,255,255,.1);
+}
+.water.text {
+    font-size: 160pt;
+}
+
+<h4>Sources:</h4>
+<h2><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-blend-mode">Mozilla Developer</a></h2>
+<h2><a href="https://www.hongkiat.com/blog/css3-mix-blend-mode/#:~:text=Adding%20color&text=To%20add%20color%20to%20the,the%20image%20appearing%20inside%20text.">Hongkiat</a></h2>
+
 <h2><a href="index.html">Return to Index</a></h2>
-
-<p>Paragraph 1</p>
-
-<p>Paragraph 2</p>
 
 </body>
 </html>
