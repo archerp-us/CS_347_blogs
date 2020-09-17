@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Blog for September 17, 2020</h1>
+
+<p>This week I did some research about embedding social media feeds into a website. 
+    I hope to do this with my website for project one as my client will need a place to 
+    post media from sites like YouTube and Facebook. Rather than just adding a few posts 
+    onto the website I want to be able to embed the entire channel or feed so that it will 
+    get updated with any new posts on the social media sites. Facebook makes this pretty easy 
+    with the use of their page plugin tool, which is used to embed a public page into a website 
+    with the option to view and react to posts the same you would on the Facebook website.
+</p>
+
+<p>
+    Facebook has the html and JavaScript code necessary for embedding on their website along 
+    with several attributes that can be edited to match the layout of the website. Using the 
+    page plugin requires making a div for the Facebook page that contains the attributes to edit. 
+    Possible attributes include options to edit the width, height and decide which parts of the 
+    Facebook page show up on the new website. This should be very useful in my project as I can 
+    just create the div on my social media page to embed the page and tune each attribute to fit 
+    the overall website style.
+</p>
+
+<pre>Example Code for Embedding a Facebook Page:
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" 
+    nonce="JumsYAOD"></script>
+
+    <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" 
+    data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" 
+    data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" 
+    class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
+</pre>
+
+<pre>Embedded Facebook Page Example:</pre>
+<div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" 
+    nonce="JumsYAOD"></script>
+
+    <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" 
+    data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" 
+    data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" 
+    class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
+
+<h4>Sources:</h4>
+<a href="https://developers.facebook.com/docs/plugins/page-plugin/">Facebook Page Plugin</a>
+
+<h3><a href="index.html">Return to Index</a></h3>
+
+</body>
+</html>
