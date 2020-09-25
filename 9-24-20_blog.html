@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Blog for September 24, 2020</h1>
+
+    <p>
+        Designing webpages with HTML/CSS allows the creator to fine tune any aspect 
+        of the site with seemingly limitless design options. While many websites are designed 
+        with the user in mind, not everyone will be pleased with the site or appreciate the design. 
+        Allowing the webpage visitor to have some control over minor aspects of page design can 
+        ensure that everyone will enjoy a website, since it is tailored specifically for their 
+        own experience. Giving the option to change the background color of text on the page or 
+        the page itself allows the user to feel they have some control over their experience and 
+        increases positivity towards the site.
+    </p>
+
+    <p>
+        Many programmers are not thrilled with the idea of giving any sort of control 
+        over to a user, as it tends to cause many new problems to arise. Using select and option 
+        tags in HTML are a fun, safe way of giving users the ability to edit a portion of the page 
+        without compromising the developers hard work. Drop down menus can be created in HTML with 
+        color options that a user may click to decide the perfect background color that will 
+        complement their viewing experience. This interesting aspect of HTML is a great way to make 
+        the user feel important and gives them a small look into the world of webpage design.
+    </p>
+
+    <h4>Example Code for Changing Background Color:</h4>
+
+    <pre>
+        &lt;select name="clr" onchange="document.bgColor=this.options[this.selectedIndex].value" size="1"&gt;
+            &lt;br&gt;
+            &lt;option value="black">black
+            &lt;option value="orange">orange
+            &lt;option value="flamingred">fuschia
+            &lt;option value="lightyellow">light yellow
+            &lt;option value="green">green
+            &lt;option value="cyan">cyan
+            &lt;option value="yellow">yellow
+            &lt;option value="red">red
+            &lt;option value="white">white&lt;/option&gt;
+        &lt;/select&gt;&nbsp;&nbsp;Background Color
+    </pre>
+
+    <h4>Color Change Menu Example:</h4>
+    <select name="clr" onchange="document.bgColor=this.options[this.selectedIndex].value" size="1">
+        <br>
+        <option value="black">black
+        <option value="orange">orange
+        <option value="flamingred">fuschia
+        <option value="lightyellow">light yellow
+        <option value="green">green
+        <option value="cyan">cyan
+        <option value="yellow">yellow
+        <option value="red">red
+        <option value="white">white</option>
+    </select>&nbsp;&nbsp;Background Color
+
+    <br>
+    <select name="clr" onchange="document.fgColor=this.options[this.selectedIndex].value" size="1">
+        <br>
+        <option value="black">black
+        <option value="orange">orange
+        <option value="flamingred">fuschia
+        <option value="lightyellow">light yellow
+        <option value="cyan">cyan
+        <option value="yellow">yellow
+        <option value="red">red
+        <option value="white">white</option>
+    </select>&nbsp;&nbsp;Text Color
+
+    <h4>Sources:</h4>
+    <a href="https://www.freelancer.com/articles/web-development/13-cool-tricks-for-html">Freelancer</a>
+    <a href="https://www.computerhope.com/issues/ch000061.htm">Computerhope</a>
+
+    <h3><a href="index.html">Return to Index</a></h3>
+
+</body>
+</html>
