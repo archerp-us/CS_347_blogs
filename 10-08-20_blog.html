@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Blog for October 8, 2020</h1>
+
+    <p>
+        While JavaScript is used for most animations, CSS also can control some aspects
+        of animation and design. This week I found one way that CSS can be used to create
+        animations is through scroll snapping. This feature is useful for stopping the scroll
+        to show a specific section of text or an image. Many websites make use of this feature
+        to display their products in individual sections. An example of this can be on Tesla’s
+        website <a href="https://www.tesla.com/">here</a>.
+    </p>
+
+    <p>
+        Scroll snapping is mainly useful for ensuring that information on a webpage will be
+        viewed in the best possible manner by visitors and customers. The use of CSS for these
+        type of animation features makes the code more cohesive since code can just be added to
+        the style section instead of writing in JavaScript. Scroll snapping is accomplished with
+        the scroll-snap-type and scroll-snap-align features in CSS, which control the position
+        of the container. Overall this feature is useful for adding some style to the scroll aspect
+        of a website and is especially good for advertising products.
+    </p>
+
+    <h4>Sources:</h4>
+    <a href="https://blog.logrocket.com/5-things-you-can-do-with-css-instead-of-javascript/">LogRocket</a>
+    <a href="https://css-tricks.com/practical-css-scroll-snapping/">CSS-Tricks</a>
+
+    <h3><a href="index.html">Return to Index</a></h3>
+
+    <h4>Example Scroll Section:</h4>
+
+    <div class="slides">
+        <section class="section-1">
+        </section>
+        <section class="section-2">
+        </section>
+        <section class="section-3">
+        </section>
+        <section class="section-4">
+        </section>
+    </div>
+
+    <style>
+        body {
+            overflow-y: hidden;
+        }
+
+        .slides {
+            /* We set the scroll snapping */
+            scroll-snap-type: x mandatory;
+            /* Necessary for mobile scrolling */
+            -webkit-overflow-scrolling: touch;
+            /* For layout purposes */
+            display: flex;
+            /* To allow horizontal scrolling */
+            overflow-x: scroll;
+        }
+
+        section {
+            /* For styling purposes */
+            height: 100vh;
+            min-width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-repeat: no - repeat;
+            background-size: cover;
+            /* Set where the snapping should happen */
+            scroll-snap-align: start;
+        }
+
+        /* Styling for the sections */
+        section h2 {
+            font-family: system-ui, sans-serif;
+            font-size: 2rem;
+            color: #1a1a1a;
+            font-weight: 100;
+        }
+
+        section h3 {
+            font-family: system-ui, sans-serif;
+            font-size: 2rem;
+            color: #ffffff;
+            font-weight: 100;
+        }
+
+        .section-1 {
+            background-image: url('https://images.unsplash.com/photo-1524260855046-f743b3cdad07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1401&q=80')
+        }
+
+        .section-2 {
+            background-image: url('https://images.unsplash.com/34/BA1yLjNnQCI1yisIZGEi_2013-07-16_1922_IMG_9873.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80')
+        }
+
+        .section-3 {
+            background-image: url('https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1378&q=80')
+        }
+
+        .section-4 {
+            background-image: url('https://images.unsplash.com/photo-1501791330673-603715379ded?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
+        }
+    </style>
+
+</body>
+
+</html>
