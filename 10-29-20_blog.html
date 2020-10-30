@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Blog for October 29, 2020</h1>
+
+    <p>
+        Since we are working with JavaScript more now in class, I decided to research 
+        some cool aspects of the language and learn more about what it can be used for. 
+        JavaScript has been interesting to learn about as it adds a whole new layer of 
+        functionality to a website and ties the backend services to the front-end site design. 
+        In class we have been doing some labs about things like creating a messaging service 
+        and I was able to find a similar project for this week’s blog. Using JavaScript in a 
+        form to check for password strength is a useful feature that has many applications in 
+        web development.
+    </p>
+
+    <p>
+        I investigated the code to accomplish this password input checking this week. 
+        The example I found was able to have a form with JavaScript that would check the 
+        input value and determine whether it is a valid password given some set of password rules. 
+        Since many different websites give users the ability to log into a personalized account, 
+        cybersecurity is essential. One way some sites help ensure that a password is strong enough 
+        is by enforcing rules like a password must include a symbol, uppercase letter, or number. 
+        Another example of this is the rules for passwords JMU requires for MyMadison. 
+        I found this feature to be an important and relevant topic for the week and will be sure 
+        to look into this feature for future projects.
+    </p>
+
+    <h4>Sources:</h4>
+    <a href="https://skillcrush.com/blog/projects-you-can-do-with-javascript/">skillcrush</a>
+    <a href="https://codepen.io/MikeTran/pen/zGLKwj">codepen.io</a>
+
+    <h3><a href="index.html">Return to Index</a></h3>
+
+
+    <h4>Example Image:</h4>
+    <img src="images/10-29.png" alt="Password form">
+
+    <h4>Example Code and Demo:</h4>
+        <p>
+            app.config(function ($httpProvider) {
+
+            $httpProvider.interceptors.push(function ($timeout, $q, $injector) {
+                var loginModal, $http, $state;
+
+                // this trick must be done so that we don't receive
+                // `Uncaught Error: [$injector:cdep] Circular dependency found`
+                $timeout(function () {
+                loginModal = $injector.get('loginModal');
+                $http = $injector.get('$http');
+                $state = $injector.get('$state');
+                });
+
+                return {
+                responseError: function (rejection) {
+                    if (rejection.status !== 401) {
+                    return rejection;
+                    }
+
+                    var deferred = $q.defer();
+
+                    loginModal()
+                    .then(function () {
+                        deferred.resolve( $http(rejection.config) );
+                    })
+                    .catch(function () {
+                        $state.go('welcome');
+                        deferred.reject(rejection);
+                    });
+
+                    return deferred.promise;
+                }
+                };
+            });
+
+            });
+            app.controller('LoginModalCtrl', function ($scope) {
+
+            this.cancel = $scope.$dismiss;
+
+            this.submit = function (email, password) {
+                var user = {email: email, password: password};
+                $rootScope.currentUser = user;
+            };
+
+            });
+            app.service('loginModal', function (ngDialog, $rootScope) {
+
+            function assignCurrentUser (user) {
+                $rootScope.currentUser = user;
+                return user;
+            }
+
+            return function() {
+                var instance =   ngDialog.openConfirm({
+                template: '<div>\
+                            <form ng-submit="LoginModalCtrl.submit(_email, _password)">\
+                                <input type="email" ng-model="_email" />\
+                                <input type="password" ng-model="_password" />\
+                                <button>Submit</button>\
+                            </form>\
+                            <button ng-click="LoginModalCtrl.cancel()">Cancel</button>\
+                            </div>',
+                controller: 'LoginModalCtrl',
+                controllerAs: 'LoginModalCtrl',
+                plain: true
+                });
+
+                return instance.then(assignCurrentUser);
+            };
+
+            });
+
+            app.run(function ($rootScope, $state, loginModal) {
+
+            $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
+                var requireLogin = toState.data.requireLogin;
+
+                if (requireLogin && typeof $rootScope.currentUser === 'undefined') {
+                event.preventDefault();
+
+                loginModal()
+                    .then(function () {
+                    return $state.go(toState.name, toParams);
+                    })
+                    .catch(function () {
+                    return $state.go('welcome');
+                    });
+                }
+            });
+            });
+        </p>
+</body>
+</html>
